@@ -26,5 +26,12 @@ def get_book_text(file):
         return file_contents
 
 
-file = sys.argv[1]
-main(file)
+file = None
+try:
+    file = sys.argv[1]
+except Exception as e:
+    sys.exit("Usage: python3 main.py <path_to_book>")
+# end try
+
+if file != None:
+    main(file)
